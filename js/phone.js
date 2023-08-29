@@ -1,4 +1,4 @@
-const loadPhone=async(searchText,isShowAll)=>{
+const loadPhone=async(searchText=12,isShowAll)=>{
 const res=await fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText}`);
 const data=await res.json();
 const phones=data.data;
@@ -69,7 +69,7 @@ const showPhoneDetails=(phone)=>{
   <p> <span>storage:</span> ${phone?.mainFeatures?.storage}</p>
   <p> <span>cheapset:</span> ${phone?.mainFeatures?.chipSet}</p>
   <p> <span>Display-size:</span> ${phone?.mainFeatures?.displaySize}</p>
-  <p> <span>GPS:</span> ${phone?.others?.GPS}</p>
+  <p> <span>GPS:</span> ${phone?.others?.GPS ||'No gps abaible'}</p>
   <p> <span>USB:</span> ${phone?.others?.USB}</p>
   <p> <span>WLAN:</span> ${phone?.others?.WLAN}</p>
   
@@ -112,4 +112,4 @@ const handleShowAll=()=>{
 handleSearch(true);
 
 }
-// loadPhone();
+loadPhone();
