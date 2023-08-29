@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>phone hunting api </title>
+    <!-- tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header> 
+        <h1 class="text-3xl text-center bg-red-300">Huntng phone</h1>
+    </header>
+<!-- main -->
+<main class="container mx-auto mt-8 ">
+  <!-- seacrch -->
+  <section>
+    <!-- <input id="search-field" type="text" placeholder="Type here"
+     class="input input-bordered input-success w-full max-w-xs" />
+     <button onclick="handleSearch()" class="btn btn-accent">Search</button> -->
+  
+  
+  <!-- another seacrch field recap  -->
+  <input type="text" id="searc-field2" placeholder="Type here" class="input input-bordered input-info w-full max-w-xs" />
+  <button onclick="handleSearch2()" class="btn btn-secondary">Search2</button>
+</section>
+
+  
+  <section>
+    <!-- loading========================== ---------->
+    <div id="loading-spinner" class=" text-center my-40 hidden ">
+      <span class="loading loading-dots text-secondary"></span>
+    </div>
+<!-- card ======================------------------>
+    <div id="phone-container" class=" grid grid-cols-1 gap-5 md:gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-8" >
+   
+  
+    </div>
+    <!-- show all buttton =================-->
+    <div id="show-all-container" class=" hidden text-center my-8">
+      <button onclick="handleShowAll()"  class="btn btn-neutral">  Show all</button>
+    </div>
+  </section>
+
+  <!-- show deatils modal -->
+  <!-- Open the modal using ID.showModal() method -->
+
+<dialog id="show_modal_deatils" class="modal modal-bottom sm:modal-middle">
+  <form method="dialog" class="modal-box">
+    <h3 id="show-phone-deatils" class="font-bold text-lg text-center"></h3>
+    <!-- deatils show  -->
+    <div id="show-deatils-container" class=" items-center text-center">
+
+    </div>
+    <div class="modal-action">
+      <!-- if there is a button in form, it will close the modal -->
+      <button class="btn btn-secondary">Close</button>
+    </div>
+  </form>
+</dialog>
+
+</main>
+
+    <!-- sript link -->
+    <script src="./js/phone.js"></script>
+    <!-- <script src="./js/correect.js"></script> -->
+</body>
+</html>
