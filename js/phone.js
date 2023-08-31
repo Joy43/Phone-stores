@@ -7,6 +7,7 @@ displayPhones(phones,isShowAll);
 }
 const displayPhones=(phones,isShowAll)=>{
     const phoneContainer=document.getElementById('phone-container');
+
     // display show all button more than 12 phone============>
     const showAllContainer=document.getElementById('show-all-container')
     if(phones.length>12 && !isShowAll){
@@ -21,9 +22,13 @@ if(!isShowAll){
   phones=phones.slice(0,12);
 }
 
+// defult search
+phoneContainer.innerHTML="";
+
+//=======================> create a div==================>
 phones.forEach(phone => {
   // console.log(phone);
-    // create a div==================>
+    
     const PhoneCard =document.createElement('div')
     PhoneCard.classList=`card justify-center p-4 text-center bg-gray-100 shadow-xl ju`;
     PhoneCard.innerHTML=`
@@ -46,7 +51,11 @@ phones.forEach(phone => {
 // hide loding spinner======================>
 toggleLoadingSpinner(false);
 }
-// show  deatis btn====================>
+
+
+
+
+// show modal  deatis btn====================>
 const handleShowDeatils=async(id)=>{
   // console.log('show',id);
   // load data indevisual
@@ -65,7 +74,7 @@ const showPhoneDetails=(phone)=>{
   phoneName.innerText=phone.name;
   const showDeatilsContainer=document.getElementById('show-deatils-container');
   showDeatilsContainer.innerHTML=`
-  <img src="${phone.image}" class=" justify-center items-center text-center ml-14 " alt=""/>
+  <img src="${phone.image}" class=" justify-center items-center text-center w-full " alt=""/>
   <p> <span>storage:</span> ${phone?.mainFeatures?.storage}</p>
   <p> <span>cheapset:</span> ${phone?.mainFeatures?.chipSet}</p>
   <p> <span>Display-size:</span> ${phone?.mainFeatures?.displaySize}</p>
